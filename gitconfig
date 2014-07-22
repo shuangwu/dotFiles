@@ -1,0 +1,52 @@
+[user]
+name = Shuang Wu
+email = shuang.wu@gmail.com
+
+[core]
+editor = vim
+pager = less -FRSX
+whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[alias]
+br = branch
+cm = commit
+co = checkout
+df = diff
+st = status -s
+unstg = reset HEAD --
+rvt = checkout --
+view = !tig
+switch = checkout
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+graph = log --graph --pretty=format:'%h %ad | %s%d [%an]' --date=short
+
+[merge]
+tool = vimdiff
+
+[color]
+diff = auto
+status = auto
+branch = auto
+interactive = auto
+ui = true
+pager = true
+
+[color "branch"]
+current = yellow reverse
+local = yellow
+remote = green
+
+[color "diff"]
+meta = yellow bold
+frag = magenta bold
+old = red bold
+new = green bold
+
+[color "status"]
+added = yellow
+changed = green
+untracked = cyan
+
+[tig]
+author-width = 8
+show-rev-graph = yes
