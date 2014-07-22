@@ -1,8 +1,11 @@
+"pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+"color
 set t_Co=256
-"set background=dark
+set background=dark
+colorscheme solarized
 
 syntax on
 filetype on     "automatic file type detection
