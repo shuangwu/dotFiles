@@ -1,0 +1,89 @@
+# vi style keybinding
+bindkey -v
+
+# Set/unset  shell options
+setopt   notify globdots correct pushdtohome cdablevars autolist
+setopt   correctall autocd recexact longlistjobs
+setopt   autoresume histignoredups pushdsilent 
+setopt   autopushd pushdminus extendedglob rcquotes mailwarning
+unsetopt bgnice autoparamslash
+
+setopt APPEND_HISTORY
+export HISTFILE="$HOME/.history"
+export HISTSIZE=1000
+export SAVEHIST=1000
+export PAGER='less'
+
+export EDITOR=/usr/bin/vim 
+
+# Color prompt
+# http://kriener.org/articles/2009/06/04/zsh-prompt-magic
+setopt prompt_subst
+autoload colors zsh/terminfo
+if [[ "$terminfo[colors]" -ge 8 ]]; then
+	colors
+fi
+# set some colors
+for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE BLACK; do
+	eval PR_$COLOR='%{$fg[${(L)COLOR}]%}'
+	eval PR_BRIGHT_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+done
+PR_RESET="%{${reset_color}%}";
+
+autoload -Uz vcs_info
+precmd() {
+	vcs_info 'prompt'
+}
+# set formats
+# %s - VCS name
+# %b - branchname
+# %u - unstagedstr
+# %c - stagedstr
+# %a - action (e.g. rebase-i)
+# %R - repository path
+# %S - path in the repository
+# %i - rev number
+# some problem with Mac's zsh version too old:
+# http://briancarper.net/blog/570/git-info-in-your-zsh-prompt
+FMT_BRANCH="${PR_GREEN}%b%u%c${PR_RESET}" # e.g. master¹²
+FMT_ACTION="(${PR_CYAN}%a${PR_RESET})"    # e.g. (rebase-i)
+FMT_PATH="%R${PR_YELLOW}/%S${PR_RESET}"  # e.g. ~/repo/subdir
+
+# check-for-changes can be really slow. you should disable it, if you work with large repositories    
+zstyle ':vcs_info:*:prompt:*' check-for-changes true
+zstyle ':vcs_info:*:prompt:*' unstagedstr '¹'  # display ¹ if there are unstaged changes
+zstyle ':vcs_info:*:prompt:*' stagedstr	'²'    # display ² if there are staged changes
+# format to use when special actions are in effect
+zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}//" "${FMT_PATH}"
+# default format
+zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"                "${FMT_PATH}"
+# when not in VCS
+zstyle ':vcs_info:*:prompt:*' nvcsformats   ""                             "%~"
+
+# Prompt format
+# %m/M  - short/full hostname
+# %n    - $USERNAME
+# %(!.#.$) - user privilege
+# %?    - return value of last command
+# %~    - $PWD with ~
+# %h/%! - current history number
+# %D    - yy-mm-dd
+# %W    - mm/dd/yy
+# %T    - 24-hour time
+# %t/%@ - 12-hour time
+# %B/%b - start/stop bold
+# %U/%u - start/stop underline
+# %F/%f - start/stop different foreground color
+# %K/%k - start/stop different background color
+# %?v   - value of the ?-th element of the psvar array
+function lprompt {
+    local git='$vcs_info_msg_0_'
+    local vcs_cmd='${${vcs_info_msg_1_%%.}/$HOME/~}'
+    # somehow on Mac, a red [1] shows up when open a terminal
+	PROMPT="[${git}${vcs_cmd}]$PR_RED%(?..[%?])$PR_RESET%(!.#.$) "
+}
+function rprompt {
+    RPROMPT="[$PR_BLUE%n$PR_WHITE@$PR_GREEN%m] $PR_YELLOW(%D{%m-%d %H:%M})$PR_RESET"
+}
+lprompt
+rprompt

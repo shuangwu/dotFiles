@@ -1,0 +1,16 @@
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# ls
+alias ls="ls -F"
+alias l="ls -lAh"
+alias ll="ls -lh"
+
+# comfirmation
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
+alias more="less"
+alias vi="vim"
