@@ -20,6 +20,9 @@ switch = checkout
 lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 graph = log --graph --pretty=format:'%h %ad | %s%d [%an]' --date=short
 
+[push]
+default = matching
+
 [merge]
 tool = vimdiff
 
@@ -50,3 +53,4 @@ untracked = cyan
 [tig]
 author-width = 8
 show-rev-graph = yes
+
