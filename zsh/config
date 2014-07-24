@@ -19,7 +19,7 @@ export EDITOR=/usr/bin/vim
 source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
 # Enable autosuggestions automatically
 zle-line-init() {
-  zle autosuggest-start
+    zle autosuggest-start
 }
 zle -N zle-line-init
 # Accept suggestions without leaving insert mode
@@ -90,14 +90,27 @@ zstyle ':vcs_info:*:prompt:*' nvcsformats   ""                             "%~"
 # %F/%f - start/stop different foreground color
 # %K/%k - start/stop different background color
 # %?v   - value of the ?-th element of the psvar array
+alias j7='JAVA_HOME=`/usr/libexec/java_home -v 1.7`'
+alias j6='JAVA_HOME=`/usr/libexec/java_home -v 1.6`'
+j7
+function jdk_version {
+    echo $JAVA_HOME | grep -o "[0-9._]*[0-9_]"
+}
+
+function git_status {
+    local git="$vcs_info_msg_0_"
+    local vcs_cmd="${${vcs_info_msg_1_%%.}/$HOME/~}"
+    echo "${git}${vcs_cmd}"
+}
 function lprompt {
-    local git='$vcs_info_msg_0_'
-    local vcs_cmd='${${vcs_info_msg_1_%%.}/$HOME/~}'
-    # somehow on Mac, a red [1] shows up when open a terminal
-	PROMPT="[${git}${vcs_cmd}]$PR_RED%(?..[%?])$PR_RESET%(!.#.$) "
+    PROMPT='[${PR_MAGENTA}R:$(rbenv version-name)${PR_RESET} ${PR_CYAN}J:$(jdk_version)${PR_RESET} $(git_status)]$PR_RED%(?..[%?])$PR_RESET%(!.#.$) '
 }
 function rprompt {
     RPROMPT="[$PR_BLUE%n$PR_WHITE@$PR_GREEN%m] $PR_YELLOW(%D{%m-%d %H:%M})$PR_RESET"
 }
 lprompt
 rprompt
+
+function title {
+    echo -en "\e]0;$1\a"
+}
