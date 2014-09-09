@@ -33,3 +33,7 @@ set expandtab			"use spaces, not tabs
 set smarttab			"make <tab> and <backspace> smarter
 set tabstop=4
 set shiftwidth=4  "indents of 4
+
+"use <space> to toggle folding
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
