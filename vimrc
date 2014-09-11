@@ -24,6 +24,9 @@ set sidescrolloff=5 "keep at least 5 columns left/right of cursor
 set visualbell    "visual beep
 set wildmenu      "menu has tab completion
 
+" enable mouse in all modes
+set mouse=a
+
 nmap <C-N><C-N> :set invnumber<CR>
 set laststatus=1
 
