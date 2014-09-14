@@ -1,1 +1,4 @@
 eval "$(rbenv init -)"
+
+# virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper_lazy.sh
