@@ -1,5 +1,10 @@
 # use Java 7
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+
+# make sure Homebrew binaries are used.
+export PATH=/usr/local/bin:$PATH
+
+# rbenv
 eval "$(rbenv init -)"
 
 # virtualenvwrapper
