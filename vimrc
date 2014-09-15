@@ -24,6 +24,11 @@ set sidescrolloff=5 "keep at least 5 columns left/right of cursor
 set visualbell    "visual beep
 set wildmenu      "menu has tab completion
 
+" encoding setting
+set encoding=utf-8
+" termencoding default to encoding
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+
 " enable mouse in all modes
 set mouse=a
 
