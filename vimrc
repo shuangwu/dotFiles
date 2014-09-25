@@ -31,9 +31,12 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 " enable mouse in all modes
 set mouse=a
-
+" toggle showing line number with ctrl-n ctrl-n
 nmap <C-N><C-N> :set invnumber<CR>
+" always show status bar
 set laststatus=1
+" allow backspace key to delete
+set backspace=indent,eol,start
 
 "global editing settings
 set autoindent smartindent	" turn on auto/smart indenting
