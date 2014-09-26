@@ -24,6 +24,17 @@ set sidescrolloff=5 "keep at least 5 columns left/right of cursor
 set visualbell    "visual beep
 set wildmenu      "menu has tab completion
 
+" save undofile between vim session
+if version >= 703
+    set undofile
+    set undodir=$HOME/tmp//,.
+endif
+
+" file with ~ postfix
+set backupdir=$HOME/tmp//,.
+" swap file
+set directory=$HOME/tmp//,.
+
 " encoding setting
 set encoding=utf-8
 " termencoding default to encoding
