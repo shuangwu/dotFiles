@@ -1,0 +1,9 @@
+shell -zsh
+startup_message off
+bindkey -k k1 prev
+bindkey -k k2 next
+bindkey -k k4 title
+bindkey -k k5 screen
+hardstatus alwayslastline
+hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=bkR})%{= kw}%?%+Lw%?%?%= %{g}]%{=b C}[ %m/%d %c ]%{W}'
+vbell off
