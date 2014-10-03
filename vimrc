@@ -24,6 +24,9 @@ set sidescrolloff=5 "keep at least 5 columns left/right of cursor
 set visualbell    "visual beep
 set wildmenu      "menu has tab completion
 
+" toggle paste with formatting
+set pastetoggle=<F10>
+
 " save undofile between vim session
 if version >= 703
     set undofile
