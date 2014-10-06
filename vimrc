@@ -67,5 +67,8 @@ set listchars=tab:>-,trail:-,extends:>,precedes:<
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
+""""""""""
+" plugins
+""""""""""
 " enable vim-indent-guides by default
 let g:indent_guides_enable_on_vim_startup = 1
