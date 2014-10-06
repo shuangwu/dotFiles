@@ -53,12 +53,19 @@ set laststatus=1
 set backspace=indent,eol,start
 
 "global editing settings
-set autoindent smartindent	" turn on auto/smart indenting
-set expandtab			"use spaces, not tabs
-set smarttab			"make <tab> and <backspace> smarter
+set autoindent smartindent  " turn on auto/smart indenting
+set expandtab               "use spaces, not tabs
+set smarttab                "make <tab> and <backspace> smarter
 set tabstop=4
-set shiftwidth=4  "indents of 4
+set shiftwidth=4            "indents of 4
+
+" highlight tabs and trailing spaces
+set list
+set listchars=tab:>-,trail:-,extends:>,precedes:<
 
 "use <space> to toggle folding
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
+" enable vim-indent-guides by default
+let g:indent_guides_enable_on_vim_startup = 1
