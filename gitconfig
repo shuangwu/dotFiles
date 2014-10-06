@@ -49,8 +49,3 @@ new = green bold
 added = yellow
 changed = green
 untracked = cyan
-
-[tig]
-author-width = 8
-show-rev-graph = yes
-
