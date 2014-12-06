@@ -30,13 +30,13 @@ set pastetoggle=<F10>
 " save undofile between vim session
 if version >= 703
     set undofile
-    set undodir=$HOME/tmp//,.
+    set undodir=$HOME/.tmp//,.
 endif
 
 " file with ~ postfix
-set backupdir=$HOME/tmp//,.
+set backupdir=$HOME/.tmp//,.
 " swap file
-set directory=$HOME/tmp//,.
+set directory=$HOME/.tmp//,.
 
 " encoding setting
 set encoding=utf-8
