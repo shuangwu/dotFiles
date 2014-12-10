@@ -96,7 +96,6 @@ zstyle ':vcs_info:*:prompt:*' nvcsformats   ""                             "%~"
 # %?v   - value of the ?-th element of the psvar array
 alias j7='JAVA_HOME=`/usr/libexec/java_home -v 1.7`'
 alias j6='JAVA_HOME=`/usr/libexec/java_home -v 1.6`'
-j7
 function jdk_version {
     echo $JAVA_HOME | grep -o "[0-9._]*[0-9_]"
 }
