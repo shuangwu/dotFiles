@@ -17,7 +17,9 @@ set smartcase
 set incsearch   "enable incremental search
 set hlsearch    "enable search hightlight
 set mousehide   "hide the mouse when typing
-set ruler
+set ruler       "show cusor position
+set cursorline
+set autochdir   "change dir wrt current file
 set showmatch     "show matching brackets when typing
 set scrolloff=5   "keep at least 5 lines above/below of cursor
 set sidescrolloff=5 "keep at least 5 columns left/right of cursor
