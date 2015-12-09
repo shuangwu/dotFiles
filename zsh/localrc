@@ -3,6 +3,8 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
 # make sure Homebrew binaries are used.
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
 # rbenv
 eval "$(rbenv init -)"
