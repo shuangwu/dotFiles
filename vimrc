@@ -51,7 +51,8 @@ set mouse=a
 " toggle showing line number with ctrl-n ctrl-n
 nmap <C-N><C-N> :set invnumber<CR>
 " always show status bar
-set laststatus=1
+set laststatus=2
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ (%c,%l/%L)%)
 " allow backspace key to delete
 set backspace=indent,eol,start
 
