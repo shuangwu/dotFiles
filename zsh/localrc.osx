@@ -1,0 +1,32 @@
+export EDITOR=/usr/local/bin/vim
+
+# Java
+alias j7='JAVA_HOME=`/usr/libexec/java_home -v 1.7`'
+alias j6='JAVA_HOME=`/usr/libexec/java_home -v 1.6`'
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+# make sure Homebrew binaries are used.
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+
+# rbenv
+eval "$(rbenv init -)"
+
+# pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
+function frameworkpython {
+    if [[ ! -z "$VIRTUAL_ENV" ]]; then
+        PYTHONHOME=$VIRTUAL_ENV /usr/local/bin/python "$@"
+    else
+        /usr/local/bin/python "$@"
+    fi
+}
