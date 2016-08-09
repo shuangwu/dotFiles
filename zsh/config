@@ -98,16 +98,11 @@ function jdk_version {
 
 function git_status {
     local git="$vcs_info_msg_0_"
-    local vcs_cmd="${${vcs_info_msg_1_%%.}/$HOME/~}"
-    echo "${git}${vcs_cmd}"
-}
-function lprompt {
-    PROMPT='[${PR_MAGENTA}R:$(rbenv version-name)${PR_RESET} ${PR_CYAN}J:$(jdk_version)${PR_RESET} $(git_status)]$PR_RED%(?..[%?])$PR_RESET%(!.#.$) '
+    echo "${git}"
 }
 function rprompt {
     RPROMPT="[$PR_BLUE%n$PR_WHITE@$PR_GREEN%m$PR_RESET] $PR_YELLOW(%D{%m-%d %H:%M})$PR_RESET"
 }
-lprompt
 rprompt
 
 function title {

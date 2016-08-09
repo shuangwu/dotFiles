@@ -1,3 +1,9 @@
+# left prompt
+function lprompt {
+    PROMPT='[${PR_GREEN}P:$(pyenv version-name) ${PR_MAGENTA}R:$(rbenv version-name) ${PR_CYAN}J:$(jdk_version) ${PR_BLUE}%~${PR_RESET} $(git_status)]$PR_RED%(?..[%?])$PR_RESET%(!.#.$) '
+}
+lprompt
+
 export EDITOR=/usr/local/bin/vim
 
 # Java
