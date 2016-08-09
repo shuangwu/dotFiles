@@ -1,21 +1,21 @@
 [submodule "vim/bundle/vim-pathogen"]
 	path = vim/bundle/vim-pathogen
-	url = git://github.com/tpope/vim-pathogen.git
+	url = https://github.com/tpope/vim-pathogen
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized
 [submodule "zsh/zsh-autosuggestions"]
 	path = zsh/zsh-autosuggestions
-	url = git://github.com/tarruda/zsh-autosuggestions
+	url = https://github.com/tarruda/zsh-autosuggestions
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
-	url = git://github.com/scrooloose/syntastic.git
+	url = https://github.com/scrooloose/syntastic
 [submodule "vim/bundle/vim-indent-guides"]
 	path = vim/bundle/vim-indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
+	url = https://github.com/nathanaelkane/vim-indent-guides
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
-	url = git://github.com/airblade/vim-gitgutter.git
+	url = https://github.com/airblade/vim-gitgutter
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
