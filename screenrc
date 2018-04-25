@@ -7,3 +7,4 @@ bindkey -k k5 screen
 hardstatus alwayslastline
 hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=bkR})%{= kw}%?%+Lw%?%?%= %{g}]%{=b C}[ %m/%d %c ]%{W}'
 vbell off
+defscrollback 10000
