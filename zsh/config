@@ -18,12 +18,7 @@ export PAGER='less'
 # ctrl-r starts searching history backward
 bindkey '^r' history-incremental-search-backward
 
-source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
-# Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
-zle -N zle-line-init
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Accept suggestions without leaving insert mode
 bindkey '^f' vi-forward-word
 # or
