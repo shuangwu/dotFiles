@@ -52,7 +52,26 @@ set mouse=a
 nmap <C-N><C-N> :set invnumber<CR>
 " always show status bar
 set laststatus=2
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ (%c,%l/%L)%)
+set statusline=
+" file name/path, %< to truncate if needed
+set statusline+=%<%F
+" file/buffer attributes
+" %M: modified flag; %1* and %0* to highlight field
+" %n: buffer number;
+" %R: readonly flag;
+" %H: helper buffer flag
+set statusline+=[%1*%M%0*%n%R%H]
+set statusline+=\ %{FugitiveStatusline()}
+" separation point between left and right aligned items
+set statusline+=%=
+" file type
+set statusline+=%y
+" file format
+set statusline+=\ %0{&fileformat}
+" file encoding
+set statusline+=\ %{&encoding}
+" cursor position
+set statusline+=\ (%c,%l/%L)
 " allow backspace key to delete
 set backspace=indent,eol,start
 
