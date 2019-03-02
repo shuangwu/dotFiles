@@ -86,6 +86,12 @@ set shiftwidth=4            "indents of 4
 set list
 set listchars=tab:>-,trail:-,extends:>,precedes:<
 
+" folding
+set nofoldenable        "not folding when open file
+set foldmethod=indent   "good for python
+set foldnestmax=10      "10 nested fold max
+set foldlevelstart=10   "open most folds by default
+set foldlevel=2
 "use <space> to toggle folding
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
