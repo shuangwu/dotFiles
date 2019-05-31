@@ -61,6 +61,7 @@ set statusline+=%<%F
 " %R: readonly flag;
 " %H: helper buffer flag
 set statusline+=[%1*%M%0*%n%R%H]
+" vim-fugitive for Git
 set statusline+=\ %{FugitiveStatusline()}
 " separation point between left and right aligned items
 set statusline+=%=
