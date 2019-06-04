@@ -1,13 +1,8 @@
 # left prompt
 function lprompt {
-    PROMPT='[${PR_GREEN}P:$(pyenv version-name) ${PR_MAGENTA}R:$(rbenv version-name)${PR_RESET} ${PR_BLUE}%~${PR_RESET} $(git_status)]$PR_RED%(?..[%?])$PR_RESET%(!.#.$) '
+    PROMPT='[${PR_GREEN}P:$(pyenv version-name)${PR_RESET} ${PR_BLUE}%~${PR_RESET} $(git_status)]$PR_RED%(?..[%?])$PR_RESET%(!.#.$) '
 }
 lprompt
-
-# rbenv
-export RBENV_ROOT=$HOME/.rbenv
-export PATH=$RBENV_ROOT/bin:$PATH
-eval "$(rbenv init -)"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
