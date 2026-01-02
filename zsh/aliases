@@ -5,7 +5,7 @@ alias ...='cd ../..'
 # ls
 alias ls="ls -F"
 alias l="ls -lAh"
-alias ll="ls -lh"
+alias ll="ls -lhv"
 
 # comfirmation
 alias cp="cp -i"
