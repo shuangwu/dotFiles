@@ -7,7 +7,7 @@ alias ls="ls -F"
 alias l="ls -lAh"
 alias ll="ls -lhv"
 
-# comfirmation
+# confirmation
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
